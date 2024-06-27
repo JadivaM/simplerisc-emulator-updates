@@ -1,6 +1,4 @@
-#! /usr/bin/python
-
-import numpy as np
+import numpy as np # type: ignore
 import time
 import argparse
 import math
@@ -337,7 +335,7 @@ def notu(destRegStr,sourceRegORimmediate):
 	return logicalNOT(destRegStr,sourceRegORimmediate,'u')
 
 def printMacro(reg):
-	print np.int32(registerArray[registerIndex(reg)])
+	print(np.int32(registerArray[registerIndex(reg)]))
 
 def printkaratsuba():
 	do()
@@ -346,7 +344,7 @@ def printkaratsuba():
 		if(i%2==0):
 			result += " "
 		result += hex(memoryArray[255-i]).replace("0x","").replace("L","").upper()
-	print result
+	print('result', result)
 
 #######
 #######							ENDS HERE
@@ -358,6 +356,7 @@ labelDict = {}
 
 
 def init(filename):
+	print('filename', filename)
 	i = 0
 	registerArray[14] = 8000
 	with open(filename) as f:
@@ -446,23 +445,24 @@ def lineParser(line):
 			operatorDict[operator](*operandList)
 			pass
 	except KeyError:
-		print "The program called an undefined label in line :\n"+line.strip()
+		print("The program called an undefined label in line :\n"+line.strip())
 		raise
 	except TypeError:
-		print "Wrong number of arguments provided in line:\n" + line.strip()
+		print("Wrong number of arguments provided in line:\n" + line.strip())
 		raise
 	except IndexError:
-		print "The program tried to access an unreachable register or memory location. \n"+line.strip()
+		print("The program tried to access an unreachable register or memory location. \n"+line.strip())
 		raise
 	except ValueError:
-		print "Immediate value can either be an integer or a hex starting with 0x or 0X.\n" + line.strip()
+		print("Immediate value can either be an integer or a hex starting with 0x or 0X.\n" + line.strip())
 		raise
 
 noInstructions = 0
 
-def run(filename):
+def run():
 	global programCounter,noInstructions
-	init(filename)
+	init("assembly.s")
+	print('labelDict', labelDict)
 	programCounter = labelDict[".main"]
 	while(programCounter < len(programArray)):
 		noInstructions +=1
@@ -485,7 +485,7 @@ if args.timer:
 	global startTime
 	startTime = time.time()
 
-run(args.filename)
+run()
 
 
 
@@ -500,5 +500,5 @@ if args.timer:
 if args.n:
 	message += "Total number of instructions used were:  " + str(noInstructions)
 if (args.timer or args.statistics or args.n):
-	print message
+	print(message)
 
