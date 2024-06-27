@@ -1,5 +1,6 @@
 The SimpleRISC ISA implements 21 instructions and has 16 registers, r0 through r15, with r15 having alias ra (return address) and r14 sp. The program uses 32 bit memory addressing for load and store operations.
 
+This is the original repository and work that I do not own!!: [abhaymitra/simplerisc-emulator: A Python based emulator for a custom RISC ISA named SimpleRISC (github.com)Links to an external site](https://github.com/abhaymitra/simplerisc-emulator)
 
 # Set up
 Make sure you have python3 installed
