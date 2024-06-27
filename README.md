@@ -2,6 +2,8 @@ The SimpleRISC ISA implements 21 instructions and has 16 registers, r0 through r
 
 This is the original repository and work that I do not own!!: [abhaymitra/simplerisc-emulator: A Python based emulator for a custom RISC ISA named SimpleRISC (github.com)Links to an external site](https://github.com/abhaymitra/simplerisc-emulator)
 
+I got the original work from the above repo, but the code wasn't working and had syntax issues and a non-descriptive readme.
+
 # Set up
 Make sure you have python3 installed
 If you're using mac then you can install python3 using hombrew running:
