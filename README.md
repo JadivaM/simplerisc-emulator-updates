@@ -11,9 +11,10 @@ If you're using mac then you can install python3 using hombrew running:
 - Then make sure it installed correctly running `python3 --version` in the terminal and you should see something like `Python 3.12.3`
 
 - Git clone this repo to your computer running `git clone `
+- Open the cloned folder in your framework of choice
 - Update the `assembly.s` file with your code
 - `.main:` will run your code
-- `.break` will print the specified register
+- `.break:` will print the specified register
 
 - You can see some further examples in the `rn.asc` file for what you'd like to do
 
