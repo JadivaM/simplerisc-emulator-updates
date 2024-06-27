@@ -10,7 +10,7 @@ If you're using mac then you can install python3 using hombrew running:
 - `brew install python` 
 - Then make sure it installed correctly running `python3 --version` in the terminal and you should see something like `Python 3.12.3`
 
-- Git clone this repo to your computer running `git clone `
+- Git clone this repo to your computer running `git clone https://github.com/JadivaM/simplerisc-emulator-updates.git`
 - Open the cloned folder in your framework of choice
 - Update the `assembly.s` file with your code
 - `.main:` will run your code
